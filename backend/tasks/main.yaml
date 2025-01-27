@@ -52,9 +52,9 @@
     community.mysql.mysql_db:
       state: import
       name: all
-      login_user: root
-      login_password: ExpenseApp@1
-      login_host: mysql.mt15.store
+      login_user: "{{ mysql_user }}"
+      login_password: "{{ mysql_password }}"
+      login_host: "{{ mysql_host }}"
       target: /app/schema/backend.sql
 
   - name: daemon reload and restart service
